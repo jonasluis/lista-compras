@@ -10,5 +10,4 @@ botaoAdicionar.addEventListener("click", (evento) => {
     verificarListaVazia(listaDeCompras)
 })
 
-
 verificarListaVazia(listaDeCompras)
