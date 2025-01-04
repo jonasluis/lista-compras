@@ -1,4 +1,5 @@
 import { criarItemDaLista } from "./src/criarItemDaLista.js"
+import verificarListaVazia from "./src/verificaListaVazia.js"
 const listaDeCompras = document.getElementById("lista-de-compras")
 const botaoAdicionar = document.getElementById("adicionar-item")
 
@@ -6,19 +7,8 @@ botaoAdicionar.addEventListener("click", (evento) => {
     evento.preventDefault() //nao deixa atualizar a tela
     const itemDaLista = criarItemDaLista()
     listaDeCompras.appendChild(itemDaLista)
-    verificarListaVazia()
+    verificarListaVazia(listaDeCompras)
 })
 
-const mensagemListaVazia = document.querySelector(".mensagem-lista-vazia")
 
-function verificarListaVazia() {
-    const itensDaLista = listaDeCompras.querySelectorAll("li")
-
-    if(itensDaLista.length === 0) {
-        mensagemListaVazia.style.display = "block"
-    } else {
-        mensagemListaVazia.style.display = "none"
-
-    }
-}
-verificarListaVazia()
+verificarListaVazia(listaDeCompras)
